@@ -1,0 +1,128 @@
+
+\section{Derivations and proofs}\label{app:derivations}
+
+\subsection{Useful relations of derivatives}\label{app:dervs_use}
+Below relations follow from the definition of $s$ as $s=\frac{L_F}{H}$.
+\begin{align}
+\frp{F}{H}=\frac{s}{H}\frp{F}{s}\label{eq:1}\\
+\frp{G}{H}=-\frac{(1-s)}{H}\frp{G}{s}\label{eq:2}\\
+\frp{G}{s}=-H\frp{G}{L_G}\label{eq:3}\\
+\frp{F}{s}=H\frp{F}{L_F}\nonumber\\
+\frp{Y}{H}= \frp{Y}{s}\frac{s}{H}+\frp{Y}{G}\frp{G}{Lg}\nonumber
+\end{align}
+The last equality follows from $\frp{Y}{s}=\frp{Y}{F}\frp{F}{s}+\frp{Y}{G}\frp{G}{s}$. Multiplying by $\frac{s}{H}$, adding and subtracting $\frp{Y}{G}\frp{G}{H}$, and substituting eqs. \eqref{eq:1}, \eqref{eq:2}, and \eqref{eq:3} yields the result. 
+\subsection{Efficient reduction of the dirty labor share}\label{app:redeffs}
+I show in this appendix that a reduction in dirty labor share is efficient under decreasing returns to scale.
+\begin{proof}
+	With a negative externality of dirty production it has to hold that 
+	\begin{align*}
+	\frp{Y}{F}\frp{F}{s}>-\frp{Y}{G}\frp{G}{s},
+	\end{align*}
+	which can be rewritten as 
+	\begin{align}\label{eq:mpl_eff}
+	\frp{Y}{L_F}>\frp{Y}{L_G}. 
+	\end{align}
+	In the efficient allocation absent externality, marginal products of dirty and green labor are equalized: $\frp{Y}{L_F}=\frp{Y}{L_G}$. 
+	Under decreasing returns to scale, it holds that the left-hand side and the right-hand side of eq. \eqref{eq:mpl_eff} are decreasing in $L_F$ and $L_G$, respectively. Hence, the adjustment to satisfy eq. \eqref{eq:mpl_eff} relative to the efficient allocation without externality requires a decrease in $L_F$ and/or a rise in $L_G$  .
+	This is achieved by reducing the fossil labor share, $s$, since $L_F=sH$ and $L_G=(1-s)H$.	
+\end{proof}
+
+
+%\begin{comment}
+%content...
+%\paragraph{If a reduction in dirty labor share is efficient, then the aggregate production function features decreasing returns to scale in labor}
+%\begin{proof}
+%	\textit{The proof rest on the assumption that returns to scale are symmetric across dirty and clean production; either both decreasing or both are non-decreasing.}
+%It holds by assumption that $s_{FB,E>0}<s_{FB,E=0}$, where $E>0$ indicates that the externality is active. 
+%Assume by contradiction that the aggregate production function features non-decreasing returns to scale. This implies that:
+%\begin{align}
+%\left. \frp{Y}{L_F} \right|_{s_{FB,E>0}}\leq \left. \frp{Y}{L_F} \right|_{s_{FB,E=0}},\\
+%\left. \frp{Y}{L_G} \right|_{s_{FB,E>0}}\geq \left. \frp{Y}{L_G} \right|_{s_{FB,E=0}}.
+%\end{align}
+%When there is no externality, the efficient allocation is characterized by
+%\begin{align}
+%\left. \frp{Y}{L_F} \right|_{s_{FB,E=0}}= \left. \frp{Y}{L_G} \right|_{s_{FB,E=0}}.
+%\end{align}
+%Using the inequalities above yields
+%\begin{align}
+%\left. \frp{Y}{L_F} \right|_{s_{FB,E>0}}\leq \left. \frp{Y}{L_G} \right|_{s_{FB,E>0}}.
+%\end{align}
+%This contradicts the optimality condition which requires 
+%\begin{align}
+%\left. \frp{Y}{L_F} \right|_{s_{FB,E>0}}> \left. \frp{Y}{L_G} \right|_{s_{FB,E>0}}.
+%\end{align}
+%Hence, when a reduction in the dirty labor share is efficient, then the aggregate production function features decreasing returns to scale in both labor input goods. 
+%\end{proof}
+%\end{comment}
+
+\subsection{The social cost of pollution and the Pigouvian tax rate}\label{app:scp}
+
+The Pigouvian tax is the tax on the externality which equals the marginal social cost of the externality. 
+The social cost of pollution in my model is defined as the price the representative household is willing to pay for a marginal reduction in dirty production. Solving the household problem as if there was a market for the externality yields this price. 
+The household's problem is then determined by
+\begin{align*}
+\underset{C,H,F}{\max}\ U(C,H,F)-\mu \left(C+\tilde{p}_FF-Y(H)\right).
+\end{align*}
+Where $\mu$ is the Lagrange multiplier. Taking the derivative with respect to dirty production  and with respect to consumption yields
+\begin{align*}
+U_F=\mu \tilde{p}_F,\\
+U_C=\mu.
+\end{align*}
+Substituting the Lagrange multiplier gives the negative of the equilibrium price, $\tilde{p}_F$, the household is willing to pay for a reduction in dirty production: $\tilde{p}_F=\frac{U_F}{U_C}$. The marginal social cost of fossil production to be added to fossil buyers' price is, hence, $\tau^{Pigou}=\frac{-U_F}{U_C}$.
+
+
+\subsection{The wage rate and the marginal product of labor}\label{app:wageMPL}
+%\tr{This one also shows that the gap between marginal products of labor of fossil relative to green is positive}
+This appendix shows that the competitive wage rate falls below the marginal product of labor under the optimal environmental policy. 
+\begin{proof}
+The aggregate marginal product of labor is defined as
+\begin{align}
+MPL&= \frp{Y}{H}.\nonumber
+\end{align}
+This expression can be rewritten using relations of derivatives summarized in \ref{app:dervs_use} as follows.
+\begin{align}
+ \frp{Y}{H}&= \frp{Y}{F}\frp{F}{H}+\frp{Y}{G}\frp{G}{H}\nonumber\\
+&= \frp{Y}{F}\frp{F}{L_F}s+\frp{Y}{G}\frp{G}{L_G}(1-s)\nonumber\\
+&= \frp{Y}{G}\frp{G}{L_G}+ s\left(\frp{Y}{F}\frp{F}{L_F}-\frp{Y}{G}\frp{G}{L_G}\right).\label{eq:mpl_opt}
+\end{align}
+The term in brackets is positive under the optimal policy as can be seen from the first order condition with respect to $s$, eq. \eqref{eq:sbs}:
+\begin{align}
+\frp{Y}{F}\frp{F}{L_F}-\frp{Y}{G}\frp{G}{L_G}=\frac{1}{H}\left(\frp{Y}{F}\frp{F}{s}+\frp{Y}{G}\frp{G}{s}\right)=\frac{1}{H}\left(\frac{-U_F\frp{F}{s}}{U_C}\right)>0.\label{eq:gap}
+\end{align}
+The inequality holds since the externality of polluting production is negative. %, above expression is positive.
+%Therefore, the marginal product of labor in the efficient allocation equals
+Now note that the first summand in eq. \eqref{eq:mpl_opt} is the competitive wage rate.  Hence $w<MPL$.
+
+\end{proof}
+\subsection{Sufficiency of the environmental tax and lump-sum transfers}\label{app:incometax0}
+This section is to prove proposition \ref{prop:1}.
+
+\begin{proof}
+Noticing that $\frac{\partial Y}{\partial H}= \frac{\partial Y}{\partial s}\frac{s}{H}-\frac{\partial Y}{\partial G}\frac{\partial G}{\partial s}\frac{1}{H}$ and that $\frac{\partial F}{\partial H}=\frac{\partial F}{\partial s}\frac{s}{H}$, and substituting eq. \eqref{eq:sbs} in eq. \eqref{eq:sbh} yields
+\begin{align}\label{eq:pigou}
+-U_C \frac{\partial Y}{\partial G}\frp{G}{L_G}=-U_H.
+\end{align}
+Hence, if the environmental tax is set to guarantee that condition \eqref{eq:sbh} holds and proceeds are redistributed lump sum, optimal hours worked only trade off the disutility from labor and the utility from more consumption. 
+
+Substituting $U_H$ from household optimality, eq. \eqref{eq:hsup}, and the clean sectors' profit maximizing condition from eq. \eqref{eq:profmax} yields
+\begin{align}
+1=1-\tau^*_\iota.\nonumber
+\end{align}
+Hence, $\tau^*_\iota =0$ from which follows that $\lambda =1$ so that the income tax scheme is a flat tax rate equal to zero; the labor income tax is not used in optimum.
+
+
+The reason for this result is that the competitive wage rate captures the social costs of the externality induced by an additional hour worked when the carbon tax is set so that the planners first order condition, eq. \eqref{eq:sbs}, holds. 
+To see this, substitute the last equality of eq. \eqref{eq:gap}
+in eq. \eqref{eq:mpl_opt} and solve for the wage rate $w= \frp{Y}{G}\frp{G}{L_G}$:
+\begin{align}
+w= \frp{Y}{H}+\frac{U_F}{U_C}\frp{F}{H},
+\end{align}
+where I replaced the derivative of fossil with respect to $s$ with the derivative with respect to $H$ using the relations in Appendix \ref{app:dervs_use}. 
+
+\end{proof}
+%\subsubsection{Simplifying social planner's first order conditions}
+%
+%The social planner's first order condition on labor can be rewritten as in the previous section to
+%\begin{align}
+%-U_H=U_C\frac{\partial Y}{\partial G}\frp{G}{L_G}
+%\end{align}

@@ -1,0 +1,155 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{epstopdf}
+\usepackage{etoc}
+\usepackage{pdfpages}
+\usepackage[capposition=top]{floatrow}
+\usepackage{pdflscape} % landsacpe package
+% set font to times
+%\usepackage{mathptmx} % times!!! 
+%\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{soul}
+\usepackage[left=2.5cm, right=2.5cm, top=2.5cm, bottom =2.5cm]{geometry}
+\usepackage{natbib}
+\usepackage{etoolbox}
+\newif\ifabbreviation
+\pretocmd{\thebibliography}{\abbreviationfalse}{}{}
+\AtBeginDocument{\abbreviationtrue}
+\DeclareRobustCommand\acroauthor[2]{%
+	\ifabbreviation #2\else #1 (\mbox{#2})\fi}
+
+%\usepackage[natbibapa]{apacite}
+%\usepackage{apacite}
+%\bibliographystyle{apacite}
+\bibliographystyle{apa}
+%\renewcommand{\footnotesize}{\fontsize{10pt}{11pt}\selectfont}
+\usepackage[doublespacing]{setspace}
+%\usepackage[onehalfspacing]{setspace}
+\usepackage{listings}
+\renewcommand{\figurename}{\textbf{Figure}}
+\renewcommand{\hat}{\widehat}
+\usepackage[bf]{caption}
+\usepackage{subcaption}
+\usepackage{tikz}
+%\begin{comment}
+%\usepackage[headsepline,footsepline]{scrlayer-scrpage} % has to come before package!!! otherwise option clash
+%\usepackage{scrlayer-scrpage}
+%\pagestyle{scrheadings} % kopfzeile/ fußzeile
+%\clearpairofpagestyles
+%\ohead{}
+%\ihead{\textit{Redistribution, Demand and  Sustainable Production}}
+%\cfoot{\thepage}
+%\pagestyle{plain} % comment this one to have header
+%\end{comment}
+\allowdisplaybreaks
+\usepackage{comment}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\definecolor{sonja}{cmyk}{0.9,0,0.3,0}
+%\definecolor{purple}{model}{color-spec}
+\usepackage{amssymb}
+\newcommand{\ar}{$\Rightarrow$ \ }
+\newcommand{\frp}[2]{\frac{\partial{#1}}{\partial{#2}}}
+\newcommand{\tr}[1]{\textcolor{red}{#1}}
+\newcommand{\vlt}[1]{\textcolor{violet}{#1}}
+\newcommand{\bl}[1]{\textcolor{blue}{#1}}
+\newcommand{\sn}[1]{\textcolor{sonja}{#1}}
+
+
+\usepackage{ulem}
+\title{Meeting Climate Targets: \\ \vspace{-2mm} The Optimal Fiscal Policy Mix}
+%\title{The Environment, Inequality, and Growth\\ \small{ optimal fiscal policy in an endogenous growth model with inequality and emission targets}}
+\author{Sonja Dobkowitz
+	\thanks{\ {University of Bonn, sonja.dobkowitz@uni-bonn.de, \url{https://sonjadobkowitz.wordpress.com/}.} \newline
+		I am deeply grateful to my supervisors Keith Kuester, Pavel Brendler, and Farzad Saidi for their support and guidance. 
+		I would like to thank Philippe Aghion, Christian Bayer, Gregor Boehl, Thomas Hintermaier,  Moritz Kuhn, Katrin Millock, Hélène Ollivier,  Janosch Brenzel-Weiss, Rubén Domínguez-Díaz, Paul Schäfer, Fabian Schmitz, and Maximilian Weiß for helpful discussions and comments.  
+		I further thank participants at the PSE Summer School on Climate Change 2022, the RTG-2281 Retreat 2022, the Bonn Macro Lunch Seminar Winter 2021.
+		Financial support by the German Research Foundation (DFG) through RTG-2281 “The Macroeconomics of Inequality” is gratefully acknowledged.}}
+%University of Bonn\\
+%Preliminary and incomplete\\
+%First version: January 9, 2022\\
+\date{\today \\ \vspace{1mm} \small{Find the latest version  \href{https://sonjadobkowitz.wordpress.com/job-market-paper/}{here}}
+}
+\usepackage{graphicx,caption}
+%\usepackage{hyperref}
+\usepackage[colorlinks,linkcolor=aaltoblue,citecolor=aaltoblue,urlcolor=aaltoblue,unicode=true]{hyperref} %can create hyperlinks. ALWAYS LOAD LAST
+\definecolor{aaltoblue}{RGB}{0,94,184}
+\usepackage{minitoc}
+\setcounter{secttocdepth}{5}
+\usetikzlibrary{shapes.geometric}
+
+% for tabular
+%\usepackage{array}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{bigdelim}
+
+%propositions etc
+\newtheorem{prop}{Proposition}
+\newtheorem{corollary}{Corollary}[prop]
+\newtheorem{lemma}[prop]{Lemma}
+
+\renewenvironment{abstract}
+{\small
+	\list{}{
+		\setlength{\leftmargin}{0.025\textwidth}%
+		\setlength{\rightmargin}{\leftmargin}%
+	}%
+	\item\relax}
+{\endlist}
+
+\begin{document}
+	%	\includepdf[pages=-]{../titlepage.pdf}
+	\maketitle
+	\begin{abstract}
+		\begin{onehalfspacing}
+			\textbf{Abstract \ }
+		What is the optimal mix of  carbon and labor income taxes in a transition toward net-zero emissions? I build a model of directed technical change in which an emission limit renders the  use of fossil energy  socially costly. In the long run, when the net-zero emission limit is binding, an optimal policy makes extensive use of carbon taxes. A subsidy on labor helps stabilize production. In the short run, the policy implications differ sharply. Labor is taxed  to reduce economic activity and emissions. The carbon tax, instead, should not rise as steeply. This allows the economy to benefit from fossil research while knowledge spillovers from the fossil to the green sector mitigate the costs of a green transition.
+			
+			
+			% NOTE: not sure if it is spillovers which drive higher green growth tomorrow or the more aggressive policy in the future. 
+			\noindent \textit{JEL classification}: H21, H23, H24, O33, Q54, Q55
+			
+		\end{onehalfspacing}
+	\end{abstract}
+
+	\graphicspath{{../../codding_model/own_basedOnFried/optimalPol_010922_revision/figures/all_13Sept22_Tplus30/}{../../codding_model/own_basedOnFried/optimalPol_010922_revision/figures/all_13Sept22/}}
+
+	%\tableofcontents
+	\thispagestyle{empty}
+	\clearpage
+	\setcounter{page}{1}
+	
+	
+	%---- Text-------------------------
+	\input{intro_impo_2}
+	\input{litt2_impo}
+	%\input{input_lit} %<- contains summaries of potentially relevant papers
+%	\input{model_ana_abs_impo} %<- analytical model as in JMP 
+	\input{test_qmod}
+	%\input{theory_DTC}<- potentially relevant stuff
+	\input{calib_simple_fisc}
+	\input{quant_res_impo_3}
+	%\input{quant_res_modelfeatures}% <- analysis of optimality results with different model features
+	\input{conclusion2}
+	%\input{going_forward1208}
+	
+	%\input{red_recomp_lit}
+	%\input{appendix_fisc}<- Important notes on nature and on Balanced growth path in model based on fried
+	%\input{solving_model_BGP}
+	%-------------------------------------
+	\bibliography{../../../bib_2_0}
+	\addcontentsline{toc}{section}{References}
+	
+	\clearpage
+	\appendix
+	
+	\input{app_analy}
+	\input{app2_impo}
+	\input{app_experiment2}
+\end{document}

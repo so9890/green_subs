@@ -1,0 +1,106 @@
+
+\begin{comment}
+\section{Model}\label{app:model}
+
+content...
+
+
+\subsection{Solving the model}
+%Demand for intermediate goods determines the price ratio, $\frac{p_g}{p_f}$ in equilibrium, equation \eqref{eq:ana_dem_fin}. 
+%Intermediate good market clearing, i.e. substituting intermediate good production functions, equations \eqref{eq:ana_prod_F} and \eqref{eq:ana_prod_G}, in \eqref{eq:ana_dem_fin} yields
+%\begin{align}
+%\frac{p_g}{p_f}=\frac{A_f}{Ag}\frac{s}{1-s}\frac{1-\varepsilon}{\varepsilon},
+%\end{align}
+%where I used that $s=\frac{L_F}{h}$ and the labor market clearing condition. Solving the price definition of the final goods price, equation \eqref{eq:ana_pr} for $p_g$ as a function of $\frac{p_g}{p_f}$ and substituting the previous expression for the price ratio gives the price of the clean good in equilibrium as a function of labor shares:
+%\begin{align}
+%p_g=(1-\varepsilon)\left(\frac{A_f}{A_g}\right)^\varepsilon\left(\frac{s}{1-s}\right)^{1-\varepsilon}.
+%\end{align}
+%The equilibrium price paid for the clean good 
+
+
+
+\subsection{Inefficiency in the wage rate with externality}
+
+The wage rate in the competitive equilibrium is below the marginal product of hours worked. 
+The reason is that the lower labor share in the dirty sector has to be sustained by a tax on dirty production. 
+Otherwise, market forces would equilibrate the marginal product of labor in both sectors and $\varepsilon=s$. Yet, this disregards the negative externality of dirty production. 
+
+In the competitive equilibrium, hence, the environmental tax serves to sustain the wedge between marginal products of labor across intermediate sectors: it is higher in the dirty and lower in the green sector.
+
+This comes at the cost of lowering the aggregate wage rate in the economy to the marginal product of labor in the green sector. 
+Nevertheless, the marginal product of labor in the fossil sector is higher. As a result, the aggregate wage rate, $w$, falls short of the aggregate marginal product of labor in the economy. This mechanism on its own renders labor supply inefficiently low in the competitive economy. However, as shown in proof \ref{prop:1}, the equilibrium hours supplied are inefficiently high in the competitve allocation. 
+
+
+When the effect of a decreased wage  en gros reduces labor supply, it makes it more costly for the government to generate funds due to a smaller tax base for the income tax. This is the mechanism pointed to by the double dividend literature.
+
+
+\end{comment}
+\input{app_analy}
+
+%\input{app_analy_functional}
+
+\section{Quantitative model}\label{app:quant_mod}
+
+\subsection{Social planner allocation}\label{app:sp_prob} The solution to the social planner's problem is defined as an allocation \\ $\{L_{Ft}, L_{Gt}, L_{Nt}, x_{Ft}, x_{Gt},  x_{Nt}, C_t,  H_{t}, s_{Ft}, s_{Gt}, s_{Nt} \}$ for each period which maximizes the social welfare function
+\vspace{-5mm}
+\begin{align*} &\sum_{t=0}^{T}\beta^t u(C_{t}, H_{t})+ PV\\
+s.t.\ &  \omega F_{t} -\delta \leq \Omega_t\\
+&C_t+x_{Ft}+x_{Gt}+x_{Nt}=Y_t\\
+&\text{Law of Motion of technologies and initial productivities}\\
+&H_{t}=L_{Ft}+L_{Gt}+L_{Nt}\leq \bar{H},\\
+&S=s_{Ft}+s_{Gt}+s_{Nt}.
+\end{align*}
+Production of $Y_t$ is defined by the equations describing production in the model. %: equations \ref{mod:y} to \ref{mod:LG}.
+ It holds that $x_{Jt}=\int_{0}^{1}x_{Jit}di$.
+%\subsection{Social planner problem}
+%The social planner chooses 
+$PV$ stands in for the continuation value of the economy; see \ref{app:PV} for the derivation.
+
+\section{Calibration of the emission limit}\label{app:calib}
+In 2019, global net CO$_2$ emissions amounted to 44.25Gt \citep[compare Figure SPM1.a p.11 in ][]{IPCCSPM} yielding a net emission limit in the 2030s of 22.125Gt per annum. The IPCC report is vague on the exact year when the 50\% reduction has to be reached. I assume that the net emission limit becomes binding in 2035 and is active until the limit reduces to zero in 2050. 
+To back out the share of the emission limit assigned to the US following the \textit{equal-per-capita} principle, I use population projections from the \cite{UNPOP}. %\footnote{ Retrieved on 4 August, 2022 from \url{https://population.un.org/dataportal/data/indicators/49/locations/900,840/start/2010/end/2100/table/pivotbylocation}.} 
+Since the US population share is projected to decline over the period from 2035 to 2050, the emission limit reduces over this period. 
+
+Following this approach, the remaining net CO$_2$ budget for the period 2020-2035 happens to be smaller than total CO$_2$ emissions equal to the limit between 2035-2050. This conflicts with the downward sloping time path of emissions stipulated by the IPCC (p.3-28).\footnote{ The reason is that global net-CO$_2$ emissions are so high that a 50\% reduction starting from 2035 results in more than half the emissions of the remaining carbon budget.}
+To generate a non-increasing pattern of the emission limit, I set the global emission limit for the period from 2035 to 2050 to half the CO$_2$ budget. This leaves an equal budget share for the initial 15 years. I assume that in the period from 2020 to 2035 the budget is equally distributed across years to simplify the numeric calculation of the optimal policy. Similar to the derivation for the period from 2035 to 2050, I apply the year-specific population share and sum over those years which form a model period. In sum, this approach amounts to distributing the remaining budget of 510Gt equally over the 30 years until the net-zero limit.
+
+\section{Numerical appendix}\label{app:PV}
+
+Since I cannot solve explicitly for the optimal policy over an infinite horizon, I truncate the problem after period $T$. 
+In the literature, utility in periods after $T$ are approximated under the assumption that policy variables are fixed, and the economy reaches a balanced growth path \citep{Barrage2019OptimalPolicy, Jones1993OptimalGrowth}. However, assuming a constant carbon tax would most likely violate the emission limit since the model is designed to reflect market forces describing an economy with green and fossil sectors operating in equilibrium. 
+
+
+I motivate the design of the continuation value by pretending the planner would hand over the economy to a successor after period $T$. A continuation value, $PV$, in the objective function captures that the planner cares about utility after period $T$. 
+This set-up accounts for concerns about economic well-being of future generations in a similar vein than the sustainability criterion proposed by the \cite{UNSUS} by attaching some value to the final technology level.\footnote{ The sustainable development criterion reads "\textit{[...] to ensure that it meets the needs of the present without comprising the ability of future generations to meet their own needs.
+	}" (p.24). This is a vague definition.  \cite{Dasgupta2021} p.(332) interprets this criterion as meaning: 
+	"\textit{[...] each generation should bequeath to its successor at least as large a productive base as it had inherited from its predecessor. }". 
+	However, this cannot be used to derive a sensible condition on the optimization in the present setting since there is no negative growth and technology is the only asset bequeathed to future generations. Thus,
+	successors will always have at least as much productive resources as predecessors left. The relation to the future is instead approximated by a future potential to derive utility from consumption given bequeathed technology levels. Natural needs of the future are accounted for through the emission limit. } I approximate the value of future technology levels by assuming constant growth rates.  
+To mitigate concerns that the choice of the continuation value drives the results, I experiment with the exact value of explicit optimization periods. I truncate the problem once explicitly adding a further period leaves the optimal allocation numerically unchanged. That is the case after $T=42$, or 210 years. %Then the 
+The planner's objective function becomes: 
+\begin{align*}
+	\underset{\{\tau_{Ft}\}_{t=0}^{T},\{\tau_{\iota t}\}_{t=0}^{T}}{\max}&\sum_{t=0}^{T}\beta^t u(C_{t}, H_{t})
+	+PV.
+\end{align*}
+
+In more detail, I define the continuation value as the consumption utility over the infinite horizon starting from the last explicit maximization period:
+\begin{align*}
+	PV=\sum_{s=T+1}^{\infty} \beta^{s}u(C_s, H_{s}).
+\end{align*}
+I make three simplifying assumptions to derive the continuation value. First, 
+I assume that the consumption share, $c_s$, with $C_s=c_sY_s$, is constant from period $T+1$ onward.  Then, consumption grows at the same rate as output. 
+Second, as an approximation to future growth, I assume the economy grows at the same rate as in the last explicit optimization period. Third, hours of workers and scientists remain at their value in the last explicit optimization period. %\footnote{ Note that I am not making the assumption that the future economy is best described by the continuation value; it rather serves as a proxy to measure the value of passed technology levels. } 
+Let $\gamma_{yT}=\frac{Y_{T}}{Y_{T-1}}-1$. Under above assumptions, I can rewrite future consumption as $C_s=(1+\gamma_{yT})^{s-T}C_{T}$.
+Given the functional form
+\begin{align*}
+	u(C_s)= \frac{C_s^{1-\theta}}{1-\theta},
+\end{align*}
+the continuation value reduces to
+\begin{align*}
+	PV= \beta^{T}\left(\frac{1}{1-\beta (1+\gamma_{yT})^{1-\theta}}\frac{C_{T}^{1-\theta}}{1-\theta}+ \frac{1}{1-\beta}u(H_{T})\right).
+\end{align*}
+Where $u(C_s, H_{s})=u(c_s)+u(H_{T})$.
+When $\theta\underset{\lim}{\rightarrow} 1$,  the first summand in brackets becomes
+\begin{align*}
+	\frac{1}{1-\beta}\log(C_{T}).
+\end{align*}
