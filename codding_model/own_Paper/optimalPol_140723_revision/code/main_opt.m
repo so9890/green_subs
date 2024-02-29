@@ -384,7 +384,7 @@ plotts.cev  =       0;
 plotts.analyta =    0;
 plotts.limit=       0; %==1 if plots emission target
 plotts.robust=      0;
-plotts.Ems_limit=   0; 
+plotts.Ems_limit=   1; 
 plotts.Ems_limit_Decomp=   0;
 plotts.phi_sens =   0;
 plotts.phiSens_newcalib_TvsNoT =0;
@@ -439,7 +439,7 @@ plotts.lf                       = 0; % comparison to laissez faire allocation
 plotts.comptarg                 = 0; % comparison with and without target
 plotts.compeff                  = 0; % efficient versus optimal benchmark and non-benchmark
 plotts.compeff3                 = 0; % sp versus optimal benchmark
-plotts.compeff3_NC              = 1; % sp versus optimal benchmark
+plotts.compeff3_NC              = 0; % sp versus optimal benchmark
 
 plotts.comp_LFOPT               = 0; % laissez faire and optimal with and without taul
 plotts.compeff1=    0; %1; only social planner
